@@ -1,5 +1,7 @@
 package com.example.ecom.controller;
 
+import com.example.ecom.dto.user.SignInDto;
+import com.example.ecom.dto.user.SignInResponseDto;
 import com.example.ecom.dto.user.ResponseDto;
 import com.example.ecom.dto.user.SignupDto;
 import com.example.ecom.service.UserService;
@@ -22,5 +24,8 @@ public class UserController {
         return userService.signUp(signupDto);
     }
 
-    // signin
+    @PostMapping("/signin")
+    public SignInResponseDto signin(@RequestBody SignInDto signInDto) {
+        return userService.signIn(signInDto);
+    }
 }
