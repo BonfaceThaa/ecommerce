@@ -47,4 +47,8 @@ public class WishListController {
 
     }
 
+    // TODO: add update wishlist endpoint
+
+    // TODO: add delete wishlist endpoint
+
 }

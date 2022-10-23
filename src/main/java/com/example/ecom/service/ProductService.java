@@ -2,6 +2,7 @@ package com.example.ecom.service;
 
 import com.example.ecom.common.ApiResponse;
 import com.example.ecom.dto.ProductDto;
+import com.example.ecom.exceptions.ProductNotExistException;
 import com.example.ecom.model.Category;
 import com.example.ecom.model.Product;
 import com.example.ecom.repository.ProductRepository;
@@ -60,5 +61,14 @@ public class ProductService {
         product.setImageURL(productDto.getImageURL());
         productRepository.save(product);
 
+    }
+
+    public Product findById(Integer productId) throws ProductNotExistException {
+        Optional<Product> optionalProduct = productRepository.findById(productId);
+        if (optionalProduct.isEmpty()) {
+            throw new ProductNotExistException("product id is invalid " + productId);
+        }
+
+        return optionalProduct.get();
     }
 }
