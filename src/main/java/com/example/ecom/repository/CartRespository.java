@@ -1,8 +1,10 @@
 package com.example.ecom.repository;
 
+import com.example.ecom.dto.cart.CartDto;
 import com.example.ecom.model.Cart;
 import com.example.ecom.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;

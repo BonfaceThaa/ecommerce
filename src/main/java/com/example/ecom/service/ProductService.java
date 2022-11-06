@@ -1,6 +1,7 @@
 package com.example.ecom.service;
 
 import com.example.ecom.common.ApiResponse;
+import com.example.ecom.dto.ProductDTO;
 import com.example.ecom.dto.ProductDto;
 import com.example.ecom.exceptions.ProductNotExistException;
 import com.example.ecom.model.Category;
@@ -17,7 +18,11 @@ import java.util.Optional;
 @Service
 public class ProductService {
     @Autowired
-    ProductRepository productRepository;
+    private ProductRepository productRepository;
+
+    public List<ProductDTO> listProductDto() {
+        return productRepository.findProductDto();
+    }
 
     public void createProduct(ProductDto productDto, Category category) {
         Product product = new Product();

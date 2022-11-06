@@ -9,7 +9,7 @@ import javax.validation.constraints.NotBlank;
 @Table(name = "products")
 public class Product {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
     private @NotBlank String name;
@@ -20,7 +20,7 @@ public class Product {
     @ManyToOne
     @JsonIgnore
     @JoinColumn(name = "category_id")
-    Category category;
+    private Category category;
 
     public Product() {
     }

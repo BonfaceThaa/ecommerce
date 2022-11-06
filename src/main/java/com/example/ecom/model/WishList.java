@@ -7,7 +7,7 @@ import java.util.Date;
 @Table(name = "wishlist")
 public class WishList {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
     @Column(name = "created_date")

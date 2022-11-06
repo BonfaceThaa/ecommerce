@@ -7,7 +7,7 @@ import java.util.Date;
 @Table(name = "cart")
 public class Cart {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
     @Column(name = "createdDate")

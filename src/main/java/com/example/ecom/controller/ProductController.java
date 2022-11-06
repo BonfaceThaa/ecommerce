@@ -1,7 +1,9 @@
 package com.example.ecom.controller;
 
 import com.example.ecom.common.ApiResponse;
+import com.example.ecom.dto.ProductDTO;
 import com.example.ecom.dto.ProductDto;
+import com.example.ecom.dto.cart.CartDto;
 import com.example.ecom.model.Category;
 import com.example.ecom.repository.CategoryRepo;
 import com.example.ecom.service.CategoryService;
@@ -49,6 +51,12 @@ public class ProductController {
         Category category = optionalCategory.get();
         productService.updateProduct(productDto, productId);
         return new ResponseEntity<>(new ApiResponse(true, "Product has been updated"), HttpStatus.OK);
+    }
+
+    @GetMapping("/dtos")
+    public List<ProductDTO> listProductDto() {
+        List<ProductDTO> products = productService.listProductDto();
+        return products;
     }
 }
 //}

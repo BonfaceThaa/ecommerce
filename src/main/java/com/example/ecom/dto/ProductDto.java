@@ -14,6 +14,11 @@ public class ProductDto {
     public ProductDto() {
     }
 
+    public ProductDto(String name, String description) {
+        this.name = name;
+        this.description = description;
+    }
+
     public Integer getId() {
         return id;
     }
