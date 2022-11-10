@@ -1,23 +1,24 @@
-- Use DTOs 
+# Use DTOs 
 Instance of an object (not an Entity). used to transfer data outside the context.
 Since it is not in the context you can do anything to or with the data. However, if you are in the context Hibernate takes
 control and validates the data.
 
-If you are not changing the values of the data, do not put the data in the JPA context
- and you will realize performance since there is not data validation of JPA context and DB
+If you are not changing the values of the data, do not put the data in the JPA context and you will realize performance since there is not data validation of JPA context and DB
 data.
 
 1. Dtos are immutable
 2. Dtos improve performance compared to Entities
 3. Dtos allow data manipulation
 
-- It is recommended to make DTOs immutable especially if you are only fetching the data and sending it to an endpoint.
+It is recommended to make DTOs immutable especially if you are only fetching the data and sending it to an endpoint.
 This is achieved using Java records.
-- Fetching a 1000 records and placing them in the context results in Hibernate validating the data unlike using DTOs which
-results in do not have the overhead of the validation.
-- Use modelmapper for converting DTOs to entities and vice versa
 
-use @Query to do a database call in the repository and anotate it to the function
+Fetching 1000 records and placing them in the context results in Hibernate validating the data unlike using DTOs which
+results in do not have the overhead of the validation.
+
+Use modelmapper for converting DTOs to entities and vice versa
+
+use `@Query` to do a database call in the repository and annotate it to the function
 make dtos immutable
 
 - TODO
